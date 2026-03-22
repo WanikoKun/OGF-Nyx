@@ -1,68 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUREAU_FILE: DE_771</title>
     <style>
-        :root { --bureau-blue: #003366; --text-gray: #cfd8dc; --border-color: #333; --highlight: #4da6ff; --danger: #ff3333; }
-        body { background-color: #050505; color: var(--text-gray); font-family: 'Courier New', monospace; padding: 20px; line-height: 1.4; display: flex; justify-content: center; }
-        .folder { max-width: 850px; width: 100%; border: 1px solid var(--border-color); background: #111; box-shadow: 0 0 30px #000; position: relative; padding-bottom: 40px; }
-        .header-bar { background: var(--bureau-blue); color: white; padding: 10px; font-size: 0.8rem; font-weight: bold; display: flex; justify-content: space-between; font-family: sans-serif; }
-        .content { padding: 30px; }
-        .stamp { border: 3px solid var(--danger); color: var(--danger); padding: 5px 15px; font-weight: bold; position: absolute; top: 60px; right: 40px; transform: rotate(10deg); font-family: sans-serif; opacity: 0.7; }
-        h2 { border-bottom: 1px solid var(--border-color); color: var(--highlight); padding-bottom: 5px; margin-top: 30px; font-size: 1rem; text-transform: uppercase; }
-        .field { margin: 8px 0; display: flex; flex-wrap: wrap; }
-        .label { color: #666; width: 240px; flex-shrink: 0; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
-        .value { color: var(--text-gray); flex: 1; min-width: 250px; }
-        .sub-type { background: #1a1a1a; padding: 12px; margin: 10px 0; border-left: 3px solid var(--highlight); font-size: 0.9rem; }
-        .back-btn { display: inline-block; margin-top: 30px; color: var(--highlight); text-decoration: none; border: 1px solid var(--highlight); padding: 8px 20px; font-family: sans-serif; font-size: 0.75rem; text-transform: uppercase; }
-        .back-btn:hover { background: var(--highlight); color: #000; }
+        body { background-color: #050505; color: #cfd8dc; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .folder { width: 100%; max-width: 850px; border: 1px solid #333; background: #111; box-shadow: 0 0 20px #000; margin-bottom: 50px; }
+        .header-bar { background: #003366; color: white; padding: 12px; font-size: 0.8rem; font-weight: bold; display: flex; justify-content: space-between; font-family: sans-serif; }
+        .content { padding: 30px; box-sizing: border-box; }
+        .stamp { border: 3px solid #ff3333; color: #ff3333; padding: 5px 15px; font-weight: bold; float: right; transform: rotate(10deg); font-family: sans-serif; margin: 10px; }
+        h1 { margin: 0; letter-spacing: 4px; font-size: 1.5rem; color: white; text-align: center; }
+        h2 { border-bottom: 1px solid #333; color: #4da6ff; padding-bottom: 5px; margin-top: 40px; font-size: 1.1rem; text-transform: uppercase; clear: both; }
+        .field { margin: 12px 0; display: block; border-left: 2px solid #222; padding-left: 10px; }
+        .label { color: #666; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 4px; }
+        .value { color: #cfd8dc; font-size: 1rem; line-height: 1.5; }
+        .sub-type { background: #1a1a1a; padding: 15px; margin: 15px 0; border-left: 4px solid #4da6ff; }
+        .sub-type strong { color: #4da6ff; display: block; margin-bottom: 5px; }
+        .note-box { background: #1a1a1a; padding: 20px; border: 1px dashed #444; font-size: 0.9rem; margin-top: 30px; }
+        .back-btn { display: inline-block; margin: 40px 0; color: #4da6ff; text-decoration: none; border: 1px solid #4da6ff; padding: 12px 25px; font-family: sans-serif; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+        .back-btn:hover { background: #4da6ff; color: #000; }
     </style>
 </head>
 <body>
 
 <div class="folder">
-    <div class="header-bar"><span>BUREAU OF ANOMALOUS PHENOMENA</span><span>REF: DE_771_ST1</span></div>
+    <div class="header-bar">
+        <span>BUREAU OF ANOMALOUS PHENOMENA</span>
+        <span>REF: DE_771_ST1</span>
+    </div>
+    
     <div class="content">
         <div class="stamp">OMEGA CLASS</div>
-        <center>
-            <h1 style="margin:0; letter-spacing:4px; font-size:1.5rem; color:white;">ANOMALOUS ENTITY FILE</h1>
-            <p style="font-size:0.7rem; color:#555;">SECURE ACCESS // STAGE 1: THE INCUBATION</p>
-        </center>
+        <h1>ANOMALOUS ENTITY FILE</h1>
+        <p style="text-align:center; font-size:0.7rem; color:#555; margin-bottom:40px;">SECURE ACCESS // STAGE 1: THE INCUBATION</p>
 
         <h2>───── ENTITY IDENTIFICATION ─────</h2>
-        <div class="field"><div class="label">Name:</div><div class="value">The Blight</div></div>
-        <div class="field"><div class="label">Designation ID:</div><div class="value">8187|JJ817W|BCBOHU</div></div>
-        <div class="field"><div class="label">Classification:</div><div class="value">Neurological Parasite / Infection</div></div>
-        <div class="field"><div class="label">Origin Status:</div><div class="value">The Nothing</div></div>
+        <div class="field"><span class="label">Name:</span><span class="value">The Blight</span></div>
+        <div class="field"><span class="label">Designation ID:</span><span class="value">8187|JJ817W|BCBOHU</span></div>
+        <div class="field"><span class="label">Species / Classification:</span><span class="value">Neurological Parasite / Infection</span></div>
+        <div class="field"><span class="label">Origin Status:</span><span class="value">The Nothing</span></div>
 
         <h2>───── PHYSICAL PROFILE ─────</h2>
-        <div class="field"><div class="label">Base Appearance:</div><div class="value">Indistinguishable from original host.</div></div>
-        <div class="field"><div class="label">Phase A (Silent):</div><div class="value">Pupils non-reactive to light; micro-tremors in jaw/neck.</div></div>
-        <div class="field"><div class="label">Phase B (Restructure):</div><div class="value">Spike to 106°F. Skeletal system pulverized/re-set. Rib cages inverted to form external defensive ribbing.</div></div>
-        <div class="field"><div class="label">Physical Anomalies:</div><div class="value">Total lack of pulse; heart liquefied into central "Blight Core."</div></div>
+        <div class="field"><span class="label">Base Appearance:</span><span class="value">Indistinguishable from original host.</span></div>
+        <div class="field"><span class="label">Phase A (Silent):</span><span class="value">Pupils fail to react to light; micro-tremors in the jaw and neck.</span></div>
+        <div class="field"><span class="label">Phase B (The Restructure):</span><span class="value">Formerly known as the "Snap Point." Violent finalization of Stage 1. Host temperature spikes to 106°F. Skeletal system is pulverized and re-set. Rib cages are often inverted to act as external "teeth" or defensive ribbing.</span></div>
+        <div class="field"><span class="label">Known Physical Anomalies:</span><span class="value">Total lack of pulse; the heart is liquefied during the Restructure to form a central "Blight Core" in the chest cavity.</span></div>
 
         <h2>───── ABILITY CLASSIFICATION ─────</h2>
-        <div class="field"><div class="label">Neural Overwrite:</div><div class="value">Uses host memories to manipulate survivors or bypass security (mimicry).</div></div>
-        <div class="field"><div class="label">Adrenaline Siphon:</div><div class="value">Feeds on human cruelty/fear to accelerate bone growth.</div></div>
+        <div class="field"><span class="label">Neural Overwrite:</span><span class="value">The infection uses the host’s own memories to manipulate survivors or bypass security (mimicry).</span></div>
+        <div class="field"><span class="label">Adrenaline Siphon:</span><span class="value">Feeds on human cruelty/fear to accelerate bone growth.</span></div>
 
-        <p style="font-size: 0.75rem; color: #555; margin-top: 20px;">[STAGE 2 SPECIALIZATIONS]</p>
-        <div class="sub-type"><strong>TYPE-S (STALKER):</strong> Stealth optimized. Joint dislocation for vent/crawlspace traversal. "False Distress" vocalizations.</div>
-        <div class="sub-type"><strong>TYPE-H (HEAVY):</strong> Multi-host fusion. Double bone-density armor. Small-arms resistant.</div>
-        <div class="sub-type"><strong>TYPE-C (CASTER):</strong> Stationary. Biological vents pumping "Nothing" spores for terraforming.</div>
-        <div class="sub-type"><strong>TYPE-V (VANGUARD):</strong> High-speed combatants. 12-inch radial bone blades.</div>
+        <p style="font-size: 0.8rem; color: #555; margin-top: 30px;">[STAGE 2 SPECIALIZATIONS]</p>
+        
+        <div class="sub-type">
+            <strong>TYPE-S (STALKER)</strong>
+            Optimized for stealth. These units retain a human silhouette but can dislocate every joint to move through vents or crawlspaces. They emit a "false distress" vocalization to lure targets.
+        </div>
+        
+        <div class="sub-type">
+            <strong>TYPE-H (HEAVY/BRUTE)</strong>
+            Formed from multiple hosts fused together or a single high-biomass host. Bone density is doubled, creating a natural armor plating that is resistant to small-arms fire.
+        </div>
+        
+        <div class="sub-type">
+            <strong>TYPE-C (CASTER/SPORE-BEARER)</strong>
+            Non-combat focused. These units remain stationary and act as biological vents, pumping "Nothing" spores into the air to begin the environmental terraforming of Stage 2.
+        </div>
+        
+        <div class="sub-type">
+            <strong>TYPE-V (VANGUARD)</strong>
+            High-speed combatants with sharpened radius/ulna bones extending from the forearms as 12-inch blades.
+        </div>
 
-        <h2>───── FEEDING & BEHAVIOR ─────</h2>
-        <div class="field"><div class="label">Sustenance:</div><div class="value">Primary source: Human Cruelty. Deprivation causes frantic, "noisy" behavior and mimicry failure.</div></div>
-        <div class="field"><div class="label">Observed Habits:</div><div class="value">Predatory. Ambushes targets at locations of former emotional significance.</div></div>
+        <h2>───── FEEDING & SUSTENANCE ─────</h2>
+        <div class="field"><span class="label">Feeding Type:</span><span class="value">Corruptive / Emotional</span></div>
+        <div class="field"><span class="label">Primary Sustenance Source:</span><span class="value">Human Cruelty</span></div>
+        <div class="field"><span class="label">Behavioral Effects of Starvation:</span><span class="value">If deprived of "cruelty," the entity becomes frantic and "noisy," losing its ability to mimic humans effectively.</span></div>
 
-        <h2>───── BUREAU OVERSIGHT NOTES ─────</h2>
-        <p style="background:#1a1a1a; padding:15px; border:1px solid #333; font-size:0.85rem;">
-            Immediate quarantine for "Restructure tremors." Do not engage Type-H without incendiary support. <strong>TERMINATION AUTHORIZED.</strong>
-        </p>
+        <h2>───── BEHAVIORAL PROFILE ─────</h2>
+        <div class="field"><span class="label">Baseline Temperament:</span><span class="value">Predatory / Hostile</span></div>
+        <div class="field"><span class="label">Observed Habits:</span><span class="value">Frequently returns to "places of importance" from the host's former life to set up ambushes for loved ones/associates.</span></div>
 
-        <a href="index.html" class="back-btn">◀ RETURN TO SYSTEM TERMINAL</a>
-    </div>
-</div>
-
-</body>
-</html>
+        <div class="note-box">
+            <strong>BUREAU OVERSIGHT NOTES:</strong><br><br>
+            Immediate quarantine of any individual exhibiting "Restructure tremors." Do not engage Type-H units without high-caliber or incendiary support.
