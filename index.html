@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ARCHIVE LOGIN</title>
+    <title>OS_V8.1</title>
     <style>
-        body { background-color: #0a0a0a; color: #00ff41; font-family: 'Courier New', Courier, monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .terminal { border: 1px solid #00ff41; padding: 20px; box-shadow: 0 0 15px #00ff41; max-width: 80%; }
-        input { background: transparent; border: none; border-bottom: 2px solid #00ff41; color: #00ff41; font-family: inherit; font-size: 1.2rem; outline: none; text-align: center; margin-top: 10px; }
-        button { margin-top: 15px; background: #00ff41; color: black; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
+        :root { --bureau-blue: #003366; --text-gray: #cfd8dc; --alert-red: #ff3333; }
+        body { background-color: #050505; color: var(--text-gray); font-family: 'Segoe UI', Tahoma, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; overflow: hidden; }
+        
+        .admin-panel { border: 2px solid #333; background: #111; width: 400px; padding: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .header { background: var(--bureau-blue); color: white; padding: 10px; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; display: flex; justify-content: space-between; }
+        .content { padding: 30px; text-align: center; }
+        
+        input { background: #222; border: 1px solid #444; color: white; padding: 10px; width: 80%; margin-bottom: 20px; font-family: monospace; outline: none; }
+        input:focus { border-color: var(--bureau-blue); }
+        
+        button { background: #333; color: white; border: 1px solid #555; padding: 10px 25px; cursor: pointer; text-transform: uppercase; font-size: 0.7rem; }
+        button:hover { background: var(--bureau-blue); border-color: white; }
+        
+        .menu-list { list-style: none; padding: 0; text-align: left; }
+        .menu-list li { border-bottom: 1px solid #222; padding: 10px; }
+        .menu-list a { color: #4da6ff; text-decoration: none; font-size: 0.9rem; }
+        .menu-list a:hover { color: white; }
         .hidden { display: none; }
+        .footer-note { font-size: 0.6rem; color: #555; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-<div class="terminal" id="login-box">
-    <h2>[SYSTEM_OVERRIDE_DETECTED]</h2>
-    <p>ENTER ENCRYPTION KEY TO ACCESS DATA:</p>
-    <input type="password" id="passInput">
-    <br>
-    <button onclick="checkPass()">DECRYPT</button>
+<div class="admin-panel" id="login-box">
+    <div class="header">
+        <span>SYSTEM LOGIN // V.8.1</span>
+        <span>[SECURE]</span>
+    </div>
+    <div class="content">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/shield.png" style="margin-bottom:15px; opacity:0.5;">
+        <p style="font-size: 0.8rem; margin-bottom: 25px;">RESTRICTED ACCESS: AUTHORIZED PERSONNEL ONLY</p>
+        <input type="password" id="passInput" placeholder="ENTER ACCESS KEY">
+        <button onclick="checkPass()">Authenticate</button>
+        <p class="footer-note">Monitoring is active. Unauthorized attempts will be logged.</p>
+    </div>
 </div>
 
-<div class="terminal hidden" id="menu">
-    <h2>ACCESS GRANTED</h2>
-    <p>SELECT SECTOR DATA:</p>
-    <ul>
-        <li><a href="stage1.html" style="color:#00ff41">DOC_01</a></li>
-        <li><a href="stage2.html" style="color:#00ff41">DOC_02</a></li>
-    </ul>
+<div class="admin-panel hidden" id="menu">
+    <div class="header">
+        <span>FILE_ARCHIVE // BLIGHT</span>
+        <span>USER: ADMIN</span>
+    </div>
+    <div class="content">
+        <ul class="menu-list">
+            <li><a href="stage1.html">▶ DE_771: Pathogen Isolation (Stage 1)</a></li>
+            <li><a href="stage2.html">▶ DE_772: Environmental Conversion (Stage 2)</a></li>
+            <li><a href="stage3.html">▶ DE_773: Sentinel Assets (Stage 3)</a></li>
+            <li><a href="stage4.html">▶ DE_774: Regional (Stage 4)</a></li>
+            <li><a href="stage5.html" style="color:#ff6666;">▶ [!] MANIFEST (Stage 5)</a></li>
+        </ul>
+        <button onclick="location.reload()" style="margin-top:20px;">Logout</button>
+    </div>
 </div>
 
 <script>
     function checkPass() {
         const pass = document.getElementById('passInput').value;
-        if(pass === 'BRAVO OMEGA OMEGA BRAVO SIERRA') {
+        if(pass === 'BLIGHT8187') {
             document.getElementById('login-box').classList.add('hidden');
             document.getElementById('menu').classList.remove('hidden');
         } else {
-            alert('INVALID CLEARANCE KEY');
+            alert('ACCESS DENIED: INVALID KEY');
         }
     }
 </script>
